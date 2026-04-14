@@ -1,0 +1,12 @@
+class Solution(object):
+    def isPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+class Solution(object):
+    def isPalindrome(self, s):
+        # Lọc chỉ giữ chữ và số, chuyển về chữ thường
+        filtered = [c.lower() for c in s if c.isalnum()]
+        # So sánh với đảo ngược
+        return filtered == filtered[::-1]      
