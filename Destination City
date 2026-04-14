@@ -1,0 +1,14 @@
+class Solution(object):
+    def destCity(self, paths):
+        """
+        :type paths: List[List[str]]
+        :rtype: str
+        """
+        start_cities = set()
+        
+        for cityA, cityB in paths:
+            start_cities.add(cityA)
+        
+        for cityA, cityB in paths:
+            if cityB not in start_cities:
+                return cityB
