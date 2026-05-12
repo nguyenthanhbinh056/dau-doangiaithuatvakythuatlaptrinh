@@ -1,0 +1,15 @@
+class Solution(object):
+    def findClosestNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+class Solution(object):
+    def findClosestNumber(self, nums):
+        closest = nums[0]  # bắt đầu với số đầu tiên
+        for num in nums:
+            if abs(num) < abs(closest):  # gần 0 hơn
+                closest = num
+            elif abs(num) == abs(closest) and num > closest:  # khoảng cách bằng nhau, chọn số lớn hơn
+                closest = num
+        return closest        
