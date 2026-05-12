@@ -1,0 +1,22 @@
+class Solution(object):
+    def pickGifts(self, gifts, k):
+        """
+        :type gifts: List[int]
+        :type k: int
+        :rtype: int
+        """
+import heapq
+import math
+
+class Solution(object):
+    def pickGifts(self, gifts, k):
+        # max-heap
+        heap = [-g for g in gifts]
+        heapq.heapify(heap)
+        
+        for _ in range(k):
+            largest = -heapq.heappop(heap)
+            reduced = int(math.sqrt(largest))
+            heapq.heappush(heap, -reduced)
+        
+        return -sum(heap)  # đổi dấu        
