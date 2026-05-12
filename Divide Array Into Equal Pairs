@@ -1,0 +1,14 @@
+class Solution(object):
+    def divideArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+class Solution(object):
+    def divideArray(self, nums):
+        from collections import Counter
+        counts = Counter(nums)
+        for v in counts.values():
+            if v % 2 != 0:
+                return False
+        return True
