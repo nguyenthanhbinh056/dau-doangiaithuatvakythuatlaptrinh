@@ -1,0 +1,17 @@
+class Solution(object):
+    def minimumSum(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+class Solution(object):
+    def minimumSum(self, num):
+        # Tách chữ số và sắp xếp tăng dần
+            digits = sorted([int(d) for d in str(num)])
+        
+        # Tạo 2 số nhỏ nhất
+            new1 = digits[0] * 10 + digits[2]
+            new2 = digits[1] * 10 + digits[3]
+        
+        # Trả về tổng nhỏ nhất
+            return new1 + new2
