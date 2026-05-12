@@ -1,0 +1,20 @@
+class Solution(object):
+    def mostFrequent(self, nums, key):
+        """
+        :type nums: List[int]
+        :type key: int
+        :rtype: int
+        """
+class Solution(object):
+    def mostFrequent(self, nums, key):
+        from collections import defaultdict
+        
+        count = defaultdict(int)
+        
+        for i in range(len(nums)-1):
+            if nums[i] == key:
+                target = nums[i+1]
+                count[target] += 1
+        
+        # Lấy target có số lần xuất hiện lớn nhất
+        return max(count, key=lambda x: count[x])
