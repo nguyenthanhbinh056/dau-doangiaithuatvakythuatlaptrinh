@@ -1,0 +1,21 @@
+class Solution(object):
+    def sortEvenOdd(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+class Solution(object):
+    def sortEvenOdd(self, nums):
+        # Lấy phần tử ở chỉ số chẵn và lẻ
+            even = nums[::2]
+            odd = nums[1::2]
+        
+        # Sắp xếp
+            even.sort()                # tăng dần
+            odd.sort(reverse=True)     # giảm dần
+        
+        # Gán lại
+            nums[::2] = even
+            nums[1::2] = odd
+        
+            return nums
