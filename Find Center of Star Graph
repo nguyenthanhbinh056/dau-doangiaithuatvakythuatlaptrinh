@@ -1,0 +1,10 @@
+class Solution:
+    def findCenter(self, edges):
+        # lấy 2 cạnh đầu
+        u1, v1 = edges[0]
+        u2, v2 = edges[1]
+
+        # node nào xuất hiện trong cả hai cạnh là center
+        if u1 == u2 or u1 == v2:
+            return u1
+        return v1
