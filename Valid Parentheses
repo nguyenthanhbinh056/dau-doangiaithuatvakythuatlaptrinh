@@ -1,0 +1,22 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+
+        mapping = {
+            ')': '(',
+            '}': '{',
+            ']': '['
+        }
+
+        for ch in s:
+            # nếu là dấu mở
+            if ch in "({[":
+                stack.append(ch)
+            else:
+                # stack rỗng hoặc không khớp
+                if not stack or stack[-1] != mapping[ch]:
+                    return False
+
+                stack.pop()
+
+        return len(stack) == 0
