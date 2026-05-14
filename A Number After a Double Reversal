@@ -1,0 +1,13 @@
+class Solution:
+    def isSameAfterReversals(self, num: int) -> bool:
+        def reverse(x):
+            res = 0
+            while x > 0:
+                res = res * 10 + x % 10
+                x //= 10
+            return res
+
+        reversed1 = reverse(num)
+        reversed2 = reverse(reversed1)
+
+        return reversed2 == num
