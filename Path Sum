@@ -1,0 +1,16 @@
+class Solution:
+    def hasPathSum(self, root, targetSum):
+        if not root:
+            return False
+
+        # nếu là node lá
+        if not root.left and not root.right:
+            return targetSum == root.val
+
+        # trừ giá trị hiện tại và tiếp tục xuống con
+        remaining = targetSum - root.val
+
+        return (
+            self.hasPathSum(root.left, remaining) or
+            self.hasPathSum(root.right, remaining)
+        )
