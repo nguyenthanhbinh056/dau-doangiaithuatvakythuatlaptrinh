@@ -1,0 +1,23 @@
+class Solution:
+    def increasingBST(self, root):
+        nodes = []
+
+        # inorder traversal
+        def inorder(node):
+            if not node:
+                return
+            inorder(node.left)
+            nodes.append(node)
+            inorder(node.right)
+
+        inorder(root)
+
+        # nối lại thành dạng "linked tree"
+        for i in range(len(nodes)):
+            nodes[i].left = None
+            if i + 1 < len(nodes):
+                nodes[i].right = nodes[i + 1]
+            else:
+                nodes[i].right = None
+
+        return nodes[0]
